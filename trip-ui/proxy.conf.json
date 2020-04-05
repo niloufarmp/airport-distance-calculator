@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "http://trip-backend-env.wj8eidghpr.ca-central-1.elasticbeanstalk.com",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

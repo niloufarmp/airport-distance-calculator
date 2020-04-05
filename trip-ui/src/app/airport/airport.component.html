@@ -1,0 +1,28 @@
+<form class="pure-form pure-form-aligned" #myForm="ngForm" (ngSubmit)="submit_form(myForm)">
+  <fieldset>
+    <p style="color:red">{{error}}</p>
+    <div class="pure-control-group">
+      <label for="FirstAirport">From</label>
+      <select id="FirstAirport" name="FirstAirport" [(ngModel)]="FirstAirport">
+        <option *ngFor="let airport of airports$" [value]="airport">{{airport}}</option>
+      </select>
+    </div>
+
+    <div class="pure-control-group">
+      <label for="SecondAirport">To</label>
+      <select id="SecondAirport" name="SecondAirport" [ngModel]="SecondAirport">
+        <option *ngFor="let airport of airports$" >{{airport}}</option>
+      </select>
+    </div>
+
+    <div class="pure-controls">
+      <button type="submit" class="pure-button pure-button-primary">Submit</button>
+    </div>
+
+
+  </fieldset>
+  <div class="pure-control-group">
+    <label for="distance">Distance: </label>
+    <output id="distance" type="text" *ngIf="computeDistanceResp$ && !hasError"> {{ computeDistanceResp$.distance}} km</output>
+  </div>
+</form>
